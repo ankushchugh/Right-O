@@ -1161,7 +1161,7 @@ ul#mainnav li {
 }
 
 ul#mainnav > li {
-	background: url(images/nav-bg.png) no-repeat scroll right center;
+	background: url(/images/nav-bg.png) no-repeat scroll right center;
 }
 
 ul#mainnav > li.prev-item, ul#mainnav > li.previ-item {
@@ -2581,7 +2581,7 @@ input:focus, textarea:focus {
 	clear:both;
 	margin:0 auto;
 	color: #868686;
-	padding: 50px 0;
+	padding: 10px 0;
 	position: relative;
 }
 

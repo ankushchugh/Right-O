@@ -157,38 +157,38 @@ function pattinav() {
 }
 
 
-// Counting Numbers
-function counts() {
+//// Counting Numbers
+//function counts() {
 
-	var counterWrapper = $('.counter-wrapper').width(),
-		$counterItem = $('.counter-item'),
-		counters = $counterItem.length,
-		counterWidth;
+//	var counterWrapper = $('.counter-wrapper').width(),
+//		$counterItem = $('.counter-item'),
+//		counters = $counterItem.length,
+//		counterWidth;
 		
-	if (counterWrapper < 768) {
-		counterWidth = counterWrapper/2;
-		$counterItem.css({'border-left': '0'});
-	}
-	else if (counterWrapper < 480) {
-		counterWidth = counterWrapper;
-		$counterItem.css({'border-left': '0'});
-	}
-	else {
-		counterWidth = counterWrapper/counters;
-	}
+//	if (counterWrapper < 768) {
+//		counterWidth = counterWrapper/2;
+//		$counterItem.css({'border-left': '0'});
+//	}
+//	else if (counterWrapper < 480) {
+//		counterWidth = counterWrapper;
+//		$counterItem.css({'border-left': '0'});
+//	}
+//	else {
+//		counterWidth = counterWrapper/counters;
+//	}
 		
-	$counterItem.css({'width': counterWidth-1});
-	$counterItem.eq(0).addClass('first-item');
+//	$counterItem.css({'width': counterWidth-1});
+//	$counterItem.eq(0).addClass('first-item');
 
 
-	$('.counter-wrapper').waypoint(function() {
-		$('.counter-number').countTo();	
-	}, 
-	{ 
-		offset: '90%',
-		triggerOnce: true
-	});
-}
+//	$('.counter-wrapper').waypoint(function() {
+//		$('.counter-number').countTo();	
+//	}, 
+//	{ 
+//		offset: '90%',
+//		triggerOnce: true
+//	});
+//}
 
 
 //Effect for Scrolltop Button	
@@ -250,44 +250,44 @@ function toggles() {
 }
 
 
-// Skills 
-function pattiskills() {
-	$('.skillbar').each(function(){
-		var barwidth = $(this).attr('data-percent');
+//// Skills 
+//function pattiskills() {
+//	$('.skillbar').each(function(){
+//		var barwidth = $(this).attr('data-percent');
 
 
-		$(this).waypoint(function() {
+//		$(this).waypoint(function() {
 		
-			$(this).find('.skillbar-bar').animate({
-				width: barwidth
-			},2000);
-			$(this).find('.skill-bar-percent').animate({
-				'left':barwidth,
-				'margin-left': '-19px',
-				'opacity': 1
-			}, 2000);	
-		}, 
-		{ 
-			offset: '90%',
-			triggerOnce: true
-		});		
-	});	
-}
+//			$(this).find('.skillbar-bar').animate({
+//				width: barwidth
+//			},2000);
+//			$(this).find('.skill-bar-percent').animate({
+//				'left':barwidth,
+//				'margin-left': '-19px',
+//				'opacity': 1
+//			}, 2000);	
+//		}, 
+//		{ 
+//			offset: '90%',
+//			triggerOnce: true
+//		});		
+//	});	
+//}
 
 
-// Services
-function pattiservices() {
-	$('.dt-service-item').click(function() {
-			$(this).parent().children('.dt-service-hover').fadeIn();
-			$(this).parent().siblings().children('.dt-service-hover').fadeOut();
-			$('.dt-service-item').addClass('under-opacity');			
-	});	
+//// Services
+//function pattiservices() {
+//	$('.dt-service-item').click(function() {
+//			$(this).parent().children('.dt-service-hover').fadeIn();
+//			$(this).parent().siblings().children('.dt-service-hover').fadeOut();
+//			$('.dt-service-item').addClass('under-opacity');			
+//	});	
 	
-	$('.dt-service-hover').click(function() {
-		$(this).fadeOut();
-		$('.dt-service-item').removeClass('under-opacity');	
-	});
-}
+//	$('.dt-service-hover').click(function() {
+//		$(this).fadeOut();
+//		$('.dt-service-item').removeClass('under-opacity');	
+//	});
+//}
 
 //Auto complete search box
 function autofillSearchbox() {
@@ -303,35 +303,36 @@ function autofillSearchbox() {
 
 }
 
-// Blog Gallery Slider
-function gallery_slider() {
-	$(".gallery-slider").owlCarousel({
-		stopOnHover : true,
-		navigation:true,
-		navigationText: [
-			  "<i class='fa fa-angle-left'></i>",
-			  "<i class='fa fa-angle-right'></i>"
-			  ],		
-		paginationSpeed : 1000,
-		goToFirstSpeed : 2000,
-		singleItem : true,
-		transitionStyle:"fade"
-	});			
-}
+//// Blog Gallery Slider
+//function gallery_slider() {
+//	$(".gallery-slider").owlCarousel({
+//		stopOnHover : true,
+//		navigation:true,
+//		navigationText: [
+//			  "<i class='fa fa-angle-left'></i>",
+//			  "<i class='fa fa-angle-right'></i>"
+//			  ],		
+//		paginationSpeed : 1000,
+//		goToFirstSpeed : 2000,
+//		singleItem : true,
+//		transitionStyle:"fade"
+//	});			
+//}
 
 
 	
 $(document).ready(function() {
 
 	//Run Functions
-	pattinav();
-	counts();
+    pattinav();
+    autofillSearchbox();
+	//counts();
 	totop();	
-	pattiservices();
+	//pattiservices();
 	pattitabs();
 	toggles();
-	pattiskills();
-	autofillSearchbox();
+	//pattiskills();
+	
 	
     
 	

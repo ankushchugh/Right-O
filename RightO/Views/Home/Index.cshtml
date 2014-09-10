@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@section featured {
+@*@section featured {
     <section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
@@ -18,7 +18,7 @@
         </div>
     </section>
 }
-<h3>We suggest the following:</h3>
+@*<h3>We suggest the following:</h3>
 <ol class="round">
     <li class="one">
         <h5>Getting Started</h5>
@@ -42,4 +42,29 @@
         and price for your applications.
         <a href="http://go.microsoft.com/fwlink/?LinkId=245157">Learn more…</a>
     </li>
-</ol>
+</ol>*@
+
+<div id="wrapper">
+    <!-- HELLO SECTION -->
+	
+	<section id="hello">
+	
+	<!--  menu-fixer class for the header. Should always be present when header is set to "solid-header". Delete it when you use "transparent-header" or "no-header" classes for the header  -->
+	<div class="menu-fixer"></div>
+	
+		<div class="fullscreenbanner-container">
+			<div class="fullscreenbanner" style="height: 542px; max-height: none;background-image:url(/images/slides/slide11.jpg)">
+
+                <div id="searchCategory"  >
+                    <h1 id="captionlabel" class="big-text">Search for Professionals..</h1>
+    <form class="search-form" method="get" action="" >
+        <input type="text" style="background-color:white;" placeholder="Carpenter, AC repair, Tailor..." id="searchTextBox" name="s" value="" />
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+</div>	
+		</div>
+
+	</section>	
+	
+</div>
