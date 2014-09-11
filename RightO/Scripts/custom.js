@@ -2,87 +2,87 @@
 	Scripts for Patti HTML - V1.0
 */
 
-$(window).load(function() {	
+function AfterLoad() {
 
-	// Portfolio Gallery Slider
-	$(".portfolio-slider").owlCarousel({
-		stopOnHover : true,
-		navigation:true,
-		navigationText: [
+    // Portfolio Gallery Slider
+    $(".portfolio-slider").owlCarousel({
+        stopOnHover : true,
+        navigation:true,
+        navigationText: [
 			  "<i class='fa fa-angle-left'></i>",
 			  "<i class='fa fa-angle-right'></i>"
-			  ],		
-		paginationSpeed : 1000,
-		goToFirstSpeed : 2000,
-		autoPlay : 8000,		
-		singleItem : true,
-		transitionStyle:"fade",
-		afterAction: afterAction
-	});	
+        ],		
+        paginationSpeed : 1000,
+        goToFirstSpeed : 2000,
+        autoPlay : 8000,		
+        singleItem : true,
+        transitionStyle:"fade",
+        afterAction: afterAction
+    });	
 
-	function afterAction(){
-		$('.slider-nav').text(""+(this.owl.currentItem+1)+"/" + this.owl.owlItems.length+"");
-	}	
+    function afterAction(){
+        $('.slider-nav').text(""+(this.owl.currentItem+1)+"/" + this.owl.owlItems.length+"");
+    }	
 	
 	
-	// Testimonials Slider
-	$("#owl-testimonials").owlCarousel({
-		autoHeight : true,
-		singleItem : true,
-		navigation:true,
-		slideSpeed : 1000
-	});
+    // Testimonials Slider
+    $("#owl-testimonials").owlCarousel({
+        autoHeight : true,
+        singleItem : true,
+        navigation:true,
+        slideSpeed : 1000
+    });
 	
-	// Clients Slider
-	$("#owl-clients").owlCarousel({
-		items : 4,
-		navigation:true,
-		autoPlay: 5000,
-		slideSpeed : 1000
-	});
+    // Clients Slider
+    $("#owl-clients").owlCarousel({
+        items : 4,
+        navigation:true,
+        autoPlay: 5000,
+        slideSpeed : 1000
+    });
 	
-	// Twitter Slider
-	$("#owl-twitter").owlCarousel({
-		autoHeight : true,
-		singleItem : true,
-		navigation:true,
-		slideSpeed : 1000
-	});		
-	
-	
-	// Calculate Audio bar width	
-	var audiowidth = $('.audio-item').width();
-	$('.jp-progress').css({'width': audiowidth-250});
+    // Twitter Slider
+    $("#owl-twitter").owlCarousel({
+        autoHeight : true,
+        singleItem : true,
+        navigation:true,
+        slideSpeed : 1000
+    });		
 	
 	
-	// Take care of intro loader
-	$("#spinner").delay(400).fadeOut(); 
-	$(".whitebg").delay(800).fadeOut("slow");	
+    // Calculate Audio bar width	
+    var audiowidth = $('.audio-item').width();
+    $('.jp-progress').css({'width': audiowidth-250});
+	
+	
+    // Take care of intro loader
+    $("#spinner").delay(400).fadeOut(); 
+    $(".whitebg").delay(800).fadeOut("slow");	
 	
 
-	// Parallax Backgrounds
-	if(!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )) {	
-		$('#contact').parallax("50%", 0.4);
-		$('#services').parallax("50%", 0.4);
-		$('#twitter').parallax("50%", 0.4);	
-		$('#projectbg').parallax("50%", 0.4);	
-		$('#quote').parallax("50%", 0.4);
-	}
+    // Parallax Backgrounds
+    if(!( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )) {	
+        $('#contact').parallax("50%", 0.4);
+        $('#services').parallax("50%", 0.4);
+        $('#twitter').parallax("50%", 0.4);	
+        $('#projectbg').parallax("50%", 0.4);	
+        $('#quote').parallax("50%", 0.4);
+    }
 	
-	// Parallax Fix for Mobile Devices
-	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		$('.parallax-section').css({'background-attachment': 'scroll'});
-	}
+    // Parallax Fix for Mobile Devices
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $('.parallax-section').css({'background-attachment': 'scroll'});
+    }
 
-	// Fixes some Waypoint issues
-	$('body').waypoint(function() {
-		console.log('ready to go');
-	}, 
+    // Fixes some Waypoint issues
+    $('body').waypoint(function() {
+        console.log('ready to go');
+    }, 
 	{ 
-		triggerOnce: true
+	    triggerOnce: true
 	});
 		
-});
+}
 
 
 function pattinav() {
@@ -250,44 +250,44 @@ function toggles() {
 }
 
 
-//// Skills 
-//function pattiskills() {
-//	$('.skillbar').each(function(){
-//		var barwidth = $(this).attr('data-percent');
+// Skills 
+function pattiskills() {
+	$('.skillbar').each(function(){
+		var barwidth = $(this).attr('data-percent');
 
 
-//		$(this).waypoint(function() {
+		$(this).waypoint(function() {
 		
-//			$(this).find('.skillbar-bar').animate({
-//				width: barwidth
-//			},2000);
-//			$(this).find('.skill-bar-percent').animate({
-//				'left':barwidth,
-//				'margin-left': '-19px',
-//				'opacity': 1
-//			}, 2000);	
-//		}, 
-//		{ 
-//			offset: '90%',
-//			triggerOnce: true
-//		});		
-//	});	
-//}
+			$(this).find('.skillbar-bar').animate({
+				width: barwidth
+			},2000);
+			$(this).find('.skill-bar-percent').animate({
+				'left':barwidth,
+				'margin-left': '-19px',
+				'opacity': 1
+			}, 2000);	
+		}, 
+		{ 
+			offset: '90%',
+			triggerOnce: true
+		});		
+	});	
+}
 
 
-//// Services
-//function pattiservices() {
-//	$('.dt-service-item').click(function() {
-//			$(this).parent().children('.dt-service-hover').fadeIn();
-//			$(this).parent().siblings().children('.dt-service-hover').fadeOut();
-//			$('.dt-service-item').addClass('under-opacity');			
-//	});	
+// services
+function pattiservices() {
+	$('.dt-service-item').click(function() {
+			$(this).parent().children('.dt-service-hover').fadeIn();
+			$(this).parent().siblings().children('.dt-service-hover').fadeOut();
+			$('.dt-service-item').addclass('under-opacity');			
+	});	
 	
-//	$('.dt-service-hover').click(function() {
-//		$(this).fadeOut();
-//		$('.dt-service-item').removeClass('under-opacity');	
-//	});
-//}
+	$('.dt-service-hover').click(function() {
+		$(this).fadeOut();
+		$('.dt-service-item').removeclass('under-opacity');	
+	});
+}
 
 //Auto complete search box
 function autofillSearchbox() {
@@ -328,13 +328,20 @@ $(document).ready(function() {
     autofillSearchbox();
 	//counts();
 	totop();	
-	//pattiservices();
+	pattiservices();
 	pattitabs();
 	toggles();
-	//pattiskills();
+	pattiskills();
 	
 	
-    
+	
+    // Testimonials Slider
+	$("#owl-testimonials").owlCarousel({
+	    autoHeight: true,
+	    singleItem: true,
+	    navigation: true,
+	    slideSpeed: 1000
+	});
 	
 	
 	// Header Effect on Scroll
@@ -470,6 +477,8 @@ $(document).ready(function() {
 		supplied: "mp3, ogg",
 		wmode: "window"
 	});
+
+
 
 });
 
