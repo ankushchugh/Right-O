@@ -334,6 +334,21 @@ $(document).ready(function() {
 	pattiskills();
 	
 	
+	$("#login").hover(function () {
+	    $(this).removeClass("black");
+	    $(this).addClass("hoverred");
+	}, function () {
+	    $(this).removeClass("hoverred");
+	    $(this).addClass("black");
+	});
+
+	$("#signup").hover(function () {
+	    $(this).removeClass("black");
+	    $(this).addClass("hoverred");
+	}, function () {
+	    $(this).removeClass("hoverred");
+	    $(this).addClass("black");
+	});
 	
     // Testimonials Slider
 	$("#owl-testimonials").owlCarousel({

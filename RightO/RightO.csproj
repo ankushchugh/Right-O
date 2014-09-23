@@ -172,71 +172,93 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="CategoryMaster.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="CustomerUserMaster.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FeedBackHistory.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
+    <Compile Include="DAL\InterfaceImplimentation\CategoryRepository.cs" />
+    <Compile Include="DAL\InterfaceImplimentation\CustomerRepository.cs" />
+    <Compile Include="DAL\InterfaceImplimentation\FeedbackRepository.cs" />
+    <Compile Include="DAL\InterfaceImplimentation\ProRepository.cs" />
+    <Compile Include="DAL\InterfaceImplimentation\QuestionRepository.cs" />
+    <Compile Include="DAL\InterfaceImplimentation\SubCategoryRepository.cs" />
+    <Compile Include="DAL\InterfaceImplimentation\TestimonialRepository.cs" />
+    <Compile Include="DAL\InterfaceImplimentation\UserServiceInfoRepository.cs" />
+    <Compile Include="DAL\InterfaceImplimentation\UserServicesUsedRepository.cs" />
+    <Compile Include="DAL\InterfaceImplimentation\WorkLocationsRepository.cs" />
+    <Compile Include="DAL\InterfaceImplimentation\WorkTimingsRepository.cs" />
+    <Compile Include="DAL\Interfaces\ICategoryRepository.cs" />
+    <Compile Include="DAL\Interfaces\ICustomerRepository.cs" />
+    <Compile Include="DAL\Interfaces\IFeedbackRepository.cs" />
+    <Compile Include="DAL\Interfaces\IProRepository.cs" />
+    <Compile Include="DAL\Interfaces\IQuestionRepository.cs" />
+    <Compile Include="DAL\Interfaces\ISubCategoryRepository.cs" />
+    <Compile Include="DAL\Interfaces\ITestimonialRepository.cs" />
+    <Compile Include="DAL\Interfaces\IUserServicesInfoRepository.cs" />
+    <Compile Include="DAL\Interfaces\IUserServicesUsedRepository.cs" />
+    <Compile Include="DAL\Interfaces\IWorkLocationsRepository.cs" />
+    <Compile Include="DAL\Interfaces\IWorkTimingsRepository.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\CategoryMaster.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CustomerUserMaster.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FeedBackHistory.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProUserCategoryMapping.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProUserMaster.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProUserWorkLocationMapping.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProUserWorkTimingsMapping.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\QuestionMaster.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RightOModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RightOModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RightOModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RightOModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RightOModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubCategoryMaster.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TestimonialHistory.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserServiceInfo.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserServicesUsedHistory.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WorkLocationsMaster.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\WorkTimingsMaster.cs">
+      <DependentUpon>RightOModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProUserCategoryMapping.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProUserMaster.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProUserWorkLocationMapping.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ProUserWorkTimingsMapping.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuestionMaster.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RightO.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RightO.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RightO.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RightO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RightO.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="SubCategoryMaster.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TestimonialHistory.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserServiceInfo.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserServicesUsedHistory.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WorkLocationsMaster.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
-    <Compile Include="WorkTimingsMaster.cs">
-      <DependentUpon>RightO.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\animate.css" />
@@ -441,6 +463,7 @@
     <Content Include="Scripts\jquery.themepunch.plugins.min.js" />
     <Content Include="Scripts\jquery.themepunch.revolution.js" />
     <Content Include="Scripts\jquery.themepunch.revolution.min.js" />
+    <Content Include="Scripts\jquery.tweet.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
@@ -506,27 +529,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="RightO.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RightO.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="RightO.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RightO.edmx</DependentUpon>
-      <LastGenOutput>RightO.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="RightO.edmx.diagram">
-      <DependentUpon>RightO.edmx</DependentUpon>
-    </Content>
-    <Content Include="RightO.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>RightO.edmx</DependentUpon>
-      <LastGenOutput>RightO.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
@@ -537,6 +539,27 @@
     <Content Include="twitter\index.php" />
     <Content Include="twitter\lib\tmhOAuth.php" />
     <Content Include="twitter\lib\tmhUtilities.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\RightOModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RightOModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\RightOModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RightOModel.edmx</DependentUpon>
+      <LastGenOutput>RightOModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RightOModel.edmx.diagram">
+      <DependentUpon>RightOModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\RightOModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RightOModel.edmx</DependentUpon>
+      <LastGenOutput>RightOModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

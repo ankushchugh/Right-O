@@ -5,11 +5,18 @@
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
+        <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/jquery-ui-1.10.4.min.js"></script>
+        <script type="text/javascript" src="~/Scripts/owl.carousel.min.js"></script>
+        <script src="~/Scripts/jack-in-the-box.js" type="text/javascript"></script>
+        <script type="text/javascript" src="~/Scripts/jquery.tweet.min.js"></script>
         @Styles.Render("~/Content/css")
         @Styles.Render("~/Content/Sitecolor")
         @Styles.Render("~/Content/themseforestcss")
         @Styles.Render("~/Content/themes/base/css")
         @Scripts.Render("~/bundles/modernizr")
+         @Scripts.Render("~/bundles/themeforest")
+        @Scripts.Render("~/bundles/jqueryval")
         
     </head>
     <body>
@@ -35,7 +42,7 @@
 						<li><a href="index.html#about"><span>ABOUT</span></a></li>
                         <li><a href="index.html#twitter"><span>JOURNAL</span></a></li>
 						<!--<li><a href="index.html#work"><span>WORK</span></a></li>-->
-                        <li><a href="index.html#team"><span>Our Team</span></a></li>						
+                        @*<li><a href="index.html#team"><span>Our Team</span></a></li>	*@					
 						<li><a href="index.html#work"><span>EXTRA</span></a>
 							<!--<ul>
 								<li><a class="external" href="elements.html">Elements</a></li>							
@@ -120,13 +127,9 @@
 		<a href="#" class="totop"><i class="fa fa-angle-double-up"></i></a>
 		
 	</footer><!--end footer-->	
-        <script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
-         <script type="text/javascript" src="~/Scripts/jquery-ui-1.10.4.min.js"></script>
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/jqueryui")
-        @Scripts.Render("~/bundles/jqueryval")
-        @Scripts.Render("~/bundles/themeforest")
-        @Scripts.Render("~/bundles/custom")
+       
+       
+        
         
 
         @RenderSection("scripts", required: false)

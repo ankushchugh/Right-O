@@ -1690,6 +1690,11 @@ a[rel="PrettyPhoto"] {
 	min-height:180px;
 }
 
+.hoverred {
+    background-color:#e1472f;
+    color:white;
+}
+
 span.item-on-hover, .grid-item-on-hover {
 	cursor:pointer;
 	display: block;	
@@ -2974,7 +2979,7 @@ ul#social li a:hover {
 
 .red.alt {
 	border: 1px solid #e1472f;
-	color: #e1472f;;
+	color: #e1472f;
 }
 
 .red:hover {

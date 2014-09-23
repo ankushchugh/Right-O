@@ -8,43 +8,44 @@ namespace RightO
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery.min.js"));
+            
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/jquery-ui-1.10.4.min.js"));
+          
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/themeforest").Include("~/Scripts/waypoints.min.js",
-                "~/Scripts/jquery-ui-1.10.4.min.js",
+            bundles.Add(new ScriptBundle("~/bundles/themeforest").Include("~/Scripts/jquery.min.js","~/Scripts/custom-isotope.js",
+                "~/Scripts/custom-revolution.js",
+                "~/Scripts/custom.js",
                 "~/Scripts/hoverIntent.js",
-                "~/Scripts/superfish.js",
-                "~/Scripts/jquery.tweet.min.js",
-                "~/Scripts/jflickrfeed.js",
-                "~/Scripts/jquery.contact.js",
-                "~/Scripts/jquery.jplayer.min.js",
-                "~/Scripts/smoothScroll.js",
-                "~/Scripts/owl.carousel.min.js",
-                "~/Scripts/jquery.fitvids.js",
-                "~/Scripts/jquery.countTo.js",
                 "~/Scripts/jack-in-the-box.js",
+                "~/Scripts/jflickrfeed.js",
+                "~/Scripts/jquery-ui-1.10.4.min.js",
+                "~/Scripts/jquery.contact.js",
+                "~/Scripts/jquery.countTo.js",
+                "~/Scripts/jquery.fitvids.js",
+                "~/Scripts/jquery.isotope.min.js",
+                "~/Scripts/jquery.jplayer.min.js",
+                
+                "~/Scripts/jquery.parallax.js",
+                "~/Scripts/jquery.prettyPhoto.js",
+                "~/Scripts/owl.carousel.min.js",
+                "~/Scripts/smoothScroll.js",
+                "~/Scripts/superfish.js",
+                "~/Scripts/waypoints.min.js",
+                "~/Scripts/jquery.tweet.min.js",
                 "~/Scripts/jquery.scrollTo.js",
                 "~/Scripts/jquery.nav.js",
-                "~/Scripts/jquery.isotope.min.js",
-                "~/Scripts/custom-isotope.js",
-                "~/Scripts/custom-revolution.js",
                 "~/Scripts/jquery.themepunch.plugins.min.js",
-                "~/Scripts/jquery.themepunch.revolution.min.js",
-                "~/Scripts/jquery.prettyPhoto.js",
-                "~/Scripts/jquery.parallax.js"
+                "~/Scripts/jquery.themepunch.revolution.min.js"
+                
                 ));
             
 	
 
-	        bundles.Add(new ScriptBundle("~/bundles/custom").Include("~/Scripts/custom.js"));
+	        bundles.Add(new ScriptBundle("~/bundles/custom").Include());
 
 	
 
