@@ -6,7 +6,7 @@ using RightO.Models;
 
 namespace RightO.DAL
 {
-    interface IQuestionRepository : IDisposable
+    public interface IQuestionRepository : IDisposable
     {
         IEnumerable<QuestionMaster> GetAllQuestionsBySubcategory(int subcategoryId);
 

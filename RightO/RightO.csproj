@@ -173,6 +173,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\InterfaceImplimentation\CategoryRepository.cs" />
     <Compile Include="DAL\InterfaceImplimentation\CustomerRepository.cs" />
@@ -545,8 +546,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RightOModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Models\RightOModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RightOModel.edmx</DependentUpon>
@@ -560,6 +559,9 @@
       <DependentUpon>RightOModel.edmx</DependentUpon>
       <LastGenOutput>RightOModel.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\righto.co.in - Web Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

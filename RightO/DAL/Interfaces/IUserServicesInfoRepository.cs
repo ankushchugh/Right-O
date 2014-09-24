@@ -6,7 +6,7 @@ using RightO.Models;
 
 namespace RightO.DAL
 {
-    interface IUserServicesInfoRepository : IDisposable
+    public interface IUserServicesInfoRepository : IDisposable
     {
         void AddUserService(UserServiceInfo userServiceInfo);
 

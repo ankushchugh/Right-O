@@ -18,8 +18,8 @@ namespace RightO.Models
         {
             this.FeedBackHistories = new HashSet<FeedBackHistory>();
             this.TestimonialHistories = new HashSet<TestimonialHistory>();
-            this.UserServicesUsedHistories = new HashSet<UserServicesUsedHistory>();
             this.UserServiceInfoes = new HashSet<UserServiceInfo>();
+            this.UserServicesUsedHistories = new HashSet<UserServicesUsedHistory>();
         }
     
         public int CustomerUserID { get; set; }
@@ -33,7 +33,7 @@ namespace RightO.Models
     
         public virtual ICollection<FeedBackHistory> FeedBackHistories { get; set; }
         public virtual ICollection<TestimonialHistory> TestimonialHistories { get; set; }
-        public virtual ICollection<UserServicesUsedHistory> UserServicesUsedHistories { get; set; }
         public virtual ICollection<UserServiceInfo> UserServiceInfoes { get; set; }
+        public virtual ICollection<UserServicesUsedHistory> UserServicesUsedHistories { get; set; }
     }
 }

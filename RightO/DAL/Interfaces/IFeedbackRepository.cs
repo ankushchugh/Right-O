@@ -6,7 +6,7 @@ using RightO.Models;
 
 namespace RightO.DAL
 {
-    interface IFeedbackRepository : IDisposable
+    public interface IFeedbackRepository : IDisposable
     {
         void AddFeedback(FeedBackHistory feedback);
 

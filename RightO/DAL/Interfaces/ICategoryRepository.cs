@@ -6,7 +6,7 @@ using RightO.Models;
 
 namespace RightO.DAL
 {
-    interface ICategoryRepository : IDisposable
+    public interface ICategoryRepository : IDisposable
     {
         IEnumerable<CategoryMaster> GetCategories();
         CategoryMaster GetCategoryByID(int categoryId);

@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RightOModelStoreContainer" CdmEntityContainer="RightOEntities">
+    <EntitySetMapping Name="CategoryMasters">
+      <EntityTypeMapping TypeName="RightOModel.CategoryMaster">
+        <MappingFragment StoreEntitySet="CategoryMaster">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerUserMasters">
+      <EntityTypeMapping TypeName="RightOModel.CustomerUserMaster">
+        <MappingFragment StoreEntitySet="CustomerUserMaster">
+          <ScalarProperty Name="CustomerUserID" ColumnName="CustomerUserID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FeedBackHistories">
+      <EntityTypeMapping TypeName="RightOModel.FeedBackHistory">
+        <MappingFragment StoreEntitySet="FeedBackHistory">
+          <ScalarProperty Name="FeedbackHistoryID" ColumnName="FeedbackHistoryID" />
+          <ScalarProperty Name="Timeliness" ColumnName="Timeliness" />
+          <ScalarProperty Name="Quality" ColumnName="Quality" />
+          <ScalarProperty Name="Behavior" ColumnName="Behavior" />
+          <ScalarProperty Name="UserServicesUsedHistoryID" ColumnName="UserServicesUsedHistoryID" />
+          <ScalarProperty Name="CustomerUserID" ColumnName="CustomerUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProUserCategoryMappings">
+      <EntityTypeMapping TypeName="RightOModel.ProUserCategoryMapping">
+        <MappingFragment StoreEntitySet="ProUserCategoryMapping">
+          <ScalarProperty Name="ProUserCategoryMappingID" ColumnName="ProUserCategoryMappingID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ProUserID" ColumnName="ProUserID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProUserMasters">
+      <EntityTypeMapping TypeName="RightOModel.ProUserMaster">
+        <MappingFragment StoreEntitySet="ProUserMaster">
+          <ScalarProperty Name="ProUserIdD" ColumnName="ProUserIdD" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="OfficialTrainingCertification" ColumnName="OfficialTrainingCertification" />
+          <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+          <ScalarProperty Name="LanguagesSpoken" ColumnName="LanguagesSpoken" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProUserWorkLocationMappings">
+      <EntityTypeMapping TypeName="RightOModel.ProUserWorkLocationMapping">
+        <MappingFragment StoreEntitySet="ProUserWorkLocationMapping">
+          <ScalarProperty Name="ProUserWorkLocationMappingID" ColumnName="ProUserWorkLocationMappingID" />
+          <ScalarProperty Name="ProUserID" ColumnName="ProUserID" />
+          <ScalarProperty Name="WorkLocationMasterID" ColumnName="WorkLocationMasterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProUserWorkTimingsMappings">
+      <EntityTypeMapping TypeName="RightOModel.ProUserWorkTimingsMapping">
+        <MappingFragment StoreEntitySet="ProUserWorkTimingsMapping">
+          <ScalarProperty Name="ProUserWorkTimingsMappingID" ColumnName="ProUserWorkTimingsMappingID" />
+          <ScalarProperty Name="ProUserID" ColumnName="ProUserID" />
+          <ScalarProperty Name="WorkTimingMasterID" ColumnName="WorkTimingMasterID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuestionMasters">
+      <EntityTypeMapping TypeName="RightOModel.QuestionMaster">
+        <MappingFragment StoreEntitySet="QuestionMaster">
+          <ScalarProperty Name="QuestionMasterID" ColumnName="QuestionMasterID" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Options" ColumnName="Options" />
+          <ScalarProperty Name="ValidationType" ColumnName="ValidationType" />
+          <ScalarProperty Name="IsValidation" ColumnName="IsValidation" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubCategoryMasters">
+      <EntityTypeMapping TypeName="RightOModel.SubCategoryMaster">
+        <MappingFragment StoreEntitySet="SubCategoryMaster">
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="SubCategoryName" ColumnName="SubCategoryName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TestimonialHistories">
+      <EntityTypeMapping TypeName="RightOModel.TestimonialHistory">
+        <MappingFragment StoreEntitySet="TestimonialHistory">
+          <ScalarProperty Name="TestimonialHistoryID" ColumnName="TestimonialHistoryID" />
+          <ScalarProperty Name="TestimonialInfo" ColumnName="TestimonialInfo" />
+          <ScalarProperty Name="CustomerUserID" ColumnName="CustomerUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserServiceInfoes">
+      <EntityTypeMapping TypeName="RightOModel.UserServiceInfo">
+        <MappingFragment StoreEntitySet="UserServiceInfo">
+          <ScalarProperty Name="UserServiceInfoID" ColumnName="UserServiceInfoID" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CustomerUserID" ColumnName="CustomerUserID" />
+          <ScalarProperty Name="ServiceDateTime" ColumnName="ServiceDateTime" />
+          <ScalarProperty Name="UserServicesUsedHistoryID" ColumnName="UserServicesUsedHistoryID" />
+          <ScalarProperty Name="QuestionMasterID" ColumnName="QuestionMasterID" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserServicesUsedHistories">
+      <EntityTypeMapping TypeName="RightOModel.UserServicesUsedHistory">
+        <MappingFragment StoreEntitySet="UserServicesUsedHistory">
+          <ScalarProperty Name="UserServicesUsedHistoryID" ColumnName="UserServicesUsedHistoryID" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="ServiceDateTime" ColumnName="ServiceDateTime" />
+          <ScalarProperty Name="SubCategoryID" ColumnName="SubCategoryID" />
+          <ScalarProperty Name="CustomerUserID" ColumnName="CustomerUserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkLocationsMasters">
+      <EntityTypeMapping TypeName="RightOModel.WorkLocationsMaster">
+        <MappingFragment StoreEntitySet="WorkLocationsMaster">
+          <ScalarProperty Name="WorkLocationMasterID" ColumnName="WorkLocationMasterID" />
+          <ScalarProperty Name="WorkLocation" ColumnName="WorkLocation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkTimingsMasters">
+      <EntityTypeMapping TypeName="RightOModel.WorkTimingsMaster">
+        <MappingFragment StoreEntitySet="WorkTimingsMaster">
+          <ScalarProperty Name="WorkTimingMasterID" ColumnName="WorkTimingMasterID" />
+          <ScalarProperty Name="WorkTiming" ColumnName="WorkTiming" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

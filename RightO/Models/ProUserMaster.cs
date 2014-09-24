@@ -17,8 +17,8 @@ namespace RightO.Models
         public ProUserMaster()
         {
             this.ProUserCategoryMappings = new HashSet<ProUserCategoryMapping>();
-            this.ProUserWorkTimingsMappings = new HashSet<ProUserWorkTimingsMapping>();
             this.ProUserWorkLocationMappings = new HashSet<ProUserWorkLocationMapping>();
+            this.ProUserWorkTimingsMappings = new HashSet<ProUserWorkTimingsMapping>();
         }
     
         public int ProUserIdD { get; set; }
@@ -34,7 +34,7 @@ namespace RightO.Models
         public string EmailAddress { get; set; }
     
         public virtual ICollection<ProUserCategoryMapping> ProUserCategoryMappings { get; set; }
-        public virtual ICollection<ProUserWorkTimingsMapping> ProUserWorkTimingsMappings { get; set; }
         public virtual ICollection<ProUserWorkLocationMapping> ProUserWorkLocationMappings { get; set; }
+        public virtual ICollection<ProUserWorkTimingsMapping> ProUserWorkTimingsMappings { get; set; }
     }
 }

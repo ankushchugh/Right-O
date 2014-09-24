@@ -6,7 +6,7 @@ using RightO.Models;
 
 namespace RightO.DAL
 {
-    interface ICustomerRepository:IDisposable
+    public interface ICustomerRepository:IDisposable
     {
         IEnumerable<CustomerUserMaster> GetAllCustomers();
 

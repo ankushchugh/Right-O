@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RightOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CategoryMaster">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsAvailable" Type="bit" />
+  </EntityType>
+  <EntityType Name="CustomerUserMaster">
+    <Key>
+      <PropertyRef Name="CustomerUserID" />
+    </Key>
+    <Property Name="CustomerUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmailAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FeedBackHistory">
+    <Key>
+      <PropertyRef Name="FeedbackHistoryID" />
+    </Key>
+    <Property Name="FeedbackHistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Timeliness" Type="int" Nullable="false" />
+    <Property Name="Quality" Type="int" Nullable="false" />
+    <Property Name="Behavior" Type="int" Nullable="false" />
+    <Property Name="UserServicesUsedHistoryID" Type="int" Nullable="false" />
+    <Property Name="CustomerUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProUserCategoryMapping">
+    <Key>
+      <PropertyRef Name="ProUserCategoryMappingID" />
+    </Key>
+    <Property Name="ProUserCategoryMappingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="ProUserID" Type="int" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProUserMaster">
+    <Key>
+      <PropertyRef Name="ProUserIdD" />
+    </Key>
+    <Property Name="ProUserIdD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Age" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Experience" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OfficialTrainingCertification" Type="nvarchar(max)" />
+    <Property Name="EducationLevel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LanguagesSpoken" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmailAddress" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProUserWorkLocationMapping">
+    <Key>
+      <PropertyRef Name="ProUserWorkLocationMappingID" />
+    </Key>
+    <Property Name="ProUserWorkLocationMappingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProUserID" Type="int" Nullable="false" />
+    <Property Name="WorkLocationMasterID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProUserWorkTimingsMapping">
+    <Key>
+      <PropertyRef Name="ProUserWorkTimingsMappingID" />
+    </Key>
+    <Property Name="ProUserWorkTimingsMappingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProUserID" Type="int" Nullable="false" />
+    <Property Name="WorkTimingMasterID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuestionMaster">
+    <Key>
+      <PropertyRef Name="QuestionMasterID" />
+    </Key>
+    <Property Name="QuestionMasterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Options" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ValidationType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsValidation" Type="bit" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubCategoryMaster">
+    <Key>
+      <PropertyRef Name="SubCategoryID" />
+    </Key>
+    <Property Name="SubCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubCategoryName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TestimonialHistory">
+    <Key>
+      <PropertyRef Name="TestimonialHistoryID" />
+    </Key>
+    <Property Name="TestimonialHistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TestimonialInfo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CustomerUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserServiceInfo">
+    <Key>
+      <PropertyRef Name="UserServiceInfoID" />
+    </Key>
+    <Property Name="UserServiceInfoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Answer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CustomerUserID" Type="int" Nullable="false" />
+    <Property Name="ServiceDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UserServicesUsedHistoryID" Type="int" Nullable="false" />
+    <Property Name="QuestionMasterID" Type="int" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserServicesUsedHistory">
+    <Key>
+      <PropertyRef Name="UserServicesUsedHistoryID" />
+    </Key>
+    <Property Name="UserServicesUsedHistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Location" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ServiceDateTime" Type="datetime" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" Nullable="false" />
+    <Property Name="CustomerUserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkLocationsMaster">
+    <Key>
+      <PropertyRef Name="WorkLocationMasterID" />
+    </Key>
+    <Property Name="WorkLocationMasterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkLocation" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WorkTimingsMaster">
+    <Key>
+      <PropertyRef Name="WorkTimingMasterID" />
+    </Key>
+    <Property Name="WorkTimingMasterID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkTiming" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__FeedBackH__Custo__29572725">
+    <End Role="CustomerUserMaster" Type="Self.CustomerUserMaster" Multiplicity="1" />
+    <End Role="FeedBackHistory" Type="Self.FeedBackHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerUserMaster">
+        <PropertyRef Name="CustomerUserID" />
+      </Principal>
+      <Dependent Role="FeedBackHistory">
+        <PropertyRef Name="CustomerUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FeedBackH__UserS__2A4B4B5E">
+    <End Role="UserServicesUsedHistory" Type="Self.UserServicesUsedHistory" Multiplicity="1" />
+    <End Role="FeedBackHistory" Type="Self.FeedBackHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserServicesUsedHistory">
+        <PropertyRef Name="UserServicesUsedHistoryID" />
+      </Principal>
+      <Dependent Role="FeedBackHistory">
+        <PropertyRef Name="UserServicesUsedHistoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProUserCa__Categ__2B3F6F97">
+    <End Role="CategoryMaster" Type="Self.CategoryMaster" Multiplicity="1" />
+    <End Role="ProUserCategoryMapping" Type="Self.ProUserCategoryMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMaster">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="ProUserCategoryMapping">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProUserCa__ProUs__2C3393D0">
+    <End Role="ProUserMaster" Type="Self.ProUserMaster" Multiplicity="1" />
+    <End Role="ProUserCategoryMapping" Type="Self.ProUserCategoryMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProUserMaster">
+        <PropertyRef Name="ProUserIdD" />
+      </Principal>
+      <Dependent Role="ProUserCategoryMapping">
+        <PropertyRef Name="ProUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProUserCa__SubCa__2D27B809">
+    <End Role="SubCategoryMaster" Type="Self.SubCategoryMaster" Multiplicity="1" />
+    <End Role="ProUserCategoryMapping" Type="Self.ProUserCategoryMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategoryMaster">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="ProUserCategoryMapping">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProUserWo__ProUs__2E1BDC42">
+    <End Role="ProUserMaster" Type="Self.ProUserMaster" Multiplicity="1" />
+    <End Role="ProUserWorkLocationMapping" Type="Self.ProUserWorkLocationMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProUserMaster">
+        <PropertyRef Name="ProUserIdD" />
+      </Principal>
+      <Dependent Role="ProUserWorkLocationMapping">
+        <PropertyRef Name="ProUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProUserWo__ProUs__300424B4">
+    <End Role="ProUserMaster" Type="Self.ProUserMaster" Multiplicity="1" />
+    <End Role="ProUserWorkTimingsMapping" Type="Self.ProUserWorkTimingsMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProUserMaster">
+        <PropertyRef Name="ProUserIdD" />
+      </Principal>
+      <Dependent Role="ProUserWorkTimingsMapping">
+        <PropertyRef Name="ProUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProUserWo__WorkL__2F10007B">
+    <End Role="WorkLocationsMaster" Type="Self.WorkLocationsMaster" Multiplicity="1" />
+    <End Role="ProUserWorkLocationMapping" Type="Self.ProUserWorkLocationMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkLocationsMaster">
+        <PropertyRef Name="WorkLocationMasterID" />
+      </Principal>
+      <Dependent Role="ProUserWorkLocationMapping">
+        <PropertyRef Name="WorkLocationMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProUserWo__WorkT__30F848ED">
+    <End Role="WorkTimingsMaster" Type="Self.WorkTimingsMaster" Multiplicity="1" />
+    <End Role="ProUserWorkTimingsMapping" Type="Self.ProUserWorkTimingsMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkTimingsMaster">
+        <PropertyRef Name="WorkTimingMasterID" />
+      </Principal>
+      <Dependent Role="ProUserWorkTimingsMapping">
+        <PropertyRef Name="WorkTimingMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__QuestionM__Categ__31EC6D26">
+    <End Role="CategoryMaster" Type="Self.CategoryMaster" Multiplicity="1" />
+    <End Role="QuestionMaster" Type="Self.QuestionMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMaster">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="QuestionMaster">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__QuestionM__SubCa__32E0915F">
+    <End Role="SubCategoryMaster" Type="Self.SubCategoryMaster" Multiplicity="1" />
+    <End Role="QuestionMaster" Type="Self.QuestionMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategoryMaster">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="QuestionMaster">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SubCatego__Categ__33D4B598">
+    <End Role="CategoryMaster" Type="Self.CategoryMaster" Multiplicity="1" />
+    <End Role="SubCategoryMaster" Type="Self.SubCategoryMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMaster">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="SubCategoryMaster">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Testimoni__Custo__34C8D9D1">
+    <End Role="CustomerUserMaster" Type="Self.CustomerUserMaster" Multiplicity="1" />
+    <End Role="TestimonialHistory" Type="Self.TestimonialHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerUserMaster">
+        <PropertyRef Name="CustomerUserID" />
+      </Principal>
+      <Dependent Role="TestimonialHistory">
+        <PropertyRef Name="CustomerUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserServi__Categ__35BCFE0A">
+    <End Role="CategoryMaster" Type="Self.CategoryMaster" Multiplicity="1" />
+    <End Role="UserServiceInfo" Type="Self.UserServiceInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMaster">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="UserServiceInfo">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserServi__Custo__36B12243">
+    <End Role="CustomerUserMaster" Type="Self.CustomerUserMaster" Multiplicity="1" />
+    <End Role="UserServiceInfo" Type="Self.UserServiceInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerUserMaster">
+        <PropertyRef Name="CustomerUserID" />
+      </Principal>
+      <Dependent Role="UserServiceInfo">
+        <PropertyRef Name="CustomerUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserServi__Custo__3A81B327">
+    <End Role="CustomerUserMaster" Type="Self.CustomerUserMaster" Multiplicity="1" />
+    <End Role="UserServicesUsedHistory" Type="Self.UserServicesUsedHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerUserMaster">
+        <PropertyRef Name="CustomerUserID" />
+      </Principal>
+      <Dependent Role="UserServicesUsedHistory">
+        <PropertyRef Name="CustomerUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserServi__Quest__37A5467C">
+    <End Role="QuestionMaster" Type="Self.QuestionMaster" Multiplicity="1" />
+    <End Role="UserServiceInfo" Type="Self.UserServiceInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuestionMaster">
+        <PropertyRef Name="QuestionMasterID" />
+      </Principal>
+      <Dependent Role="UserServiceInfo">
+        <PropertyRef Name="QuestionMasterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserServi__SubCa__38996AB5">
+    <End Role="SubCategoryMaster" Type="Self.SubCategoryMaster" Multiplicity="1" />
+    <End Role="UserServiceInfo" Type="Self.UserServiceInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategoryMaster">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="UserServiceInfo">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserServi__SubCa__3B75D760">
+    <End Role="SubCategoryMaster" Type="Self.SubCategoryMaster" Multiplicity="1" />
+    <End Role="UserServicesUsedHistory" Type="Self.UserServicesUsedHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategoryMaster">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="UserServicesUsedHistory">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserServi__UserS__398D8EEE">
+    <End Role="UserServicesUsedHistory" Type="Self.UserServicesUsedHistory" Multiplicity="1" />
+    <End Role="UserServiceInfo" Type="Self.UserServiceInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserServicesUsedHistory">
+        <PropertyRef Name="UserServicesUsedHistoryID" />
+      </Principal>
+      <Dependent Role="UserServiceInfo">
+        <PropertyRef Name="UserServicesUsedHistoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RightOModelStoreContainer">
+    <EntitySet Name="CategoryMaster" EntityType="Self.CategoryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerUserMaster" EntityType="Self.CustomerUserMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FeedBackHistory" EntityType="Self.FeedBackHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProUserCategoryMapping" EntityType="Self.ProUserCategoryMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProUserMaster" EntityType="Self.ProUserMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProUserWorkLocationMapping" EntityType="Self.ProUserWorkLocationMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProUserWorkTimingsMapping" EntityType="Self.ProUserWorkTimingsMapping" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuestionMaster" EntityType="Self.QuestionMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubCategoryMaster" EntityType="Self.SubCategoryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestimonialHistory" EntityType="Self.TestimonialHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserServiceInfo" EntityType="Self.UserServiceInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserServicesUsedHistory" EntityType="Self.UserServicesUsedHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkLocationsMaster" EntityType="Self.WorkLocationsMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkTimingsMaster" EntityType="Self.WorkTimingsMaster" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__FeedBackH__Custo__29572725" Association="Self.FK__FeedBackH__Custo__29572725">
+      <End Role="CustomerUserMaster" EntitySet="CustomerUserMaster" />
+      <End Role="FeedBackHistory" EntitySet="FeedBackHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FeedBackH__UserS__2A4B4B5E" Association="Self.FK__FeedBackH__UserS__2A4B4B5E">
+      <End Role="UserServicesUsedHistory" EntitySet="UserServicesUsedHistory" />
+      <End Role="FeedBackHistory" EntitySet="FeedBackHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProUserCa__Categ__2B3F6F97" Association="Self.FK__ProUserCa__Categ__2B3F6F97">
+      <End Role="CategoryMaster" EntitySet="CategoryMaster" />
+      <End Role="ProUserCategoryMapping" EntitySet="ProUserCategoryMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProUserCa__ProUs__2C3393D0" Association="Self.FK__ProUserCa__ProUs__2C3393D0">
+      <End Role="ProUserMaster" EntitySet="ProUserMaster" />
+      <End Role="ProUserCategoryMapping" EntitySet="ProUserCategoryMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProUserCa__SubCa__2D27B809" Association="Self.FK__ProUserCa__SubCa__2D27B809">
+      <End Role="SubCategoryMaster" EntitySet="SubCategoryMaster" />
+      <End Role="ProUserCategoryMapping" EntitySet="ProUserCategoryMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProUserWo__ProUs__2E1BDC42" Association="Self.FK__ProUserWo__ProUs__2E1BDC42">
+      <End Role="ProUserMaster" EntitySet="ProUserMaster" />
+      <End Role="ProUserWorkLocationMapping" EntitySet="ProUserWorkLocationMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProUserWo__ProUs__300424B4" Association="Self.FK__ProUserWo__ProUs__300424B4">
+      <End Role="ProUserMaster" EntitySet="ProUserMaster" />
+      <End Role="ProUserWorkTimingsMapping" EntitySet="ProUserWorkTimingsMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProUserWo__WorkL__2F10007B" Association="Self.FK__ProUserWo__WorkL__2F10007B">
+      <End Role="WorkLocationsMaster" EntitySet="WorkLocationsMaster" />
+      <End Role="ProUserWorkLocationMapping" EntitySet="ProUserWorkLocationMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProUserWo__WorkT__30F848ED" Association="Self.FK__ProUserWo__WorkT__30F848ED">
+      <End Role="WorkTimingsMaster" EntitySet="WorkTimingsMaster" />
+      <End Role="ProUserWorkTimingsMapping" EntitySet="ProUserWorkTimingsMapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK__QuestionM__Categ__31EC6D26" Association="Self.FK__QuestionM__Categ__31EC6D26">
+      <End Role="CategoryMaster" EntitySet="CategoryMaster" />
+      <End Role="QuestionMaster" EntitySet="QuestionMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK__QuestionM__SubCa__32E0915F" Association="Self.FK__QuestionM__SubCa__32E0915F">
+      <End Role="SubCategoryMaster" EntitySet="SubCategoryMaster" />
+      <End Role="QuestionMaster" EntitySet="QuestionMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SubCatego__Categ__33D4B598" Association="Self.FK__SubCatego__Categ__33D4B598">
+      <End Role="CategoryMaster" EntitySet="CategoryMaster" />
+      <End Role="SubCategoryMaster" EntitySet="SubCategoryMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Testimoni__Custo__34C8D9D1" Association="Self.FK__Testimoni__Custo__34C8D9D1">
+      <End Role="CustomerUserMaster" EntitySet="CustomerUserMaster" />
+      <End Role="TestimonialHistory" EntitySet="TestimonialHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserServi__Categ__35BCFE0A" Association="Self.FK__UserServi__Categ__35BCFE0A">
+      <End Role="CategoryMaster" EntitySet="CategoryMaster" />
+      <End Role="UserServiceInfo" EntitySet="UserServiceInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserServi__Custo__36B12243" Association="Self.FK__UserServi__Custo__36B12243">
+      <End Role="CustomerUserMaster" EntitySet="CustomerUserMaster" />
+      <End Role="UserServiceInfo" EntitySet="UserServiceInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserServi__Custo__3A81B327" Association="Self.FK__UserServi__Custo__3A81B327">
+      <End Role="CustomerUserMaster" EntitySet="CustomerUserMaster" />
+      <End Role="UserServicesUsedHistory" EntitySet="UserServicesUsedHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserServi__Quest__37A5467C" Association="Self.FK__UserServi__Quest__37A5467C">
+      <End Role="QuestionMaster" EntitySet="QuestionMaster" />
+      <End Role="UserServiceInfo" EntitySet="UserServiceInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserServi__SubCa__38996AB5" Association="Self.FK__UserServi__SubCa__38996AB5">
+      <End Role="SubCategoryMaster" EntitySet="SubCategoryMaster" />
+      <End Role="UserServiceInfo" EntitySet="UserServiceInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserServi__SubCa__3B75D760" Association="Self.FK__UserServi__SubCa__3B75D760">
+      <End Role="SubCategoryMaster" EntitySet="SubCategoryMaster" />
+      <End Role="UserServicesUsedHistory" EntitySet="UserServicesUsedHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserServi__UserS__398D8EEE" Association="Self.FK__UserServi__UserS__398D8EEE">
+      <End Role="UserServicesUsedHistory" EntitySet="UserServicesUsedHistory" />
+      <End Role="UserServiceInfo" EntitySet="UserServiceInfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

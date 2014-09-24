@@ -44,5 +44,11 @@ namespace RightO.DAL
         {
             context.SaveChanges();
         }
+
+
+        public IEnumerable<SubCategoryMaster> GetAllSubCategories()
+        {
+            return context.SubCategoryMasters.ToList();
+        }
     }
 }

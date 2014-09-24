@@ -6,7 +6,7 @@ using RightO.Models;
 
 namespace RightO.DAL
 {
-    interface IProRepository :IDisposable
+    public interface IProRepository :IDisposable
     {
         IEnumerable<ProUserMaster> GetAllPros();
 

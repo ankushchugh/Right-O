@@ -6,7 +6,7 @@ using RightO.Models;
 
 namespace RightO.DAL
 {
-    interface IWorkLocationsRepository : IDisposable
+    public interface IWorkLocationsRepository : IDisposable
     {
         IEnumerable<WorkLocationsMaster> GetWorkLocations();
 

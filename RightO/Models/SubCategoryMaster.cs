@@ -18,8 +18,8 @@ namespace RightO.Models
         {
             this.ProUserCategoryMappings = new HashSet<ProUserCategoryMapping>();
             this.QuestionMasters = new HashSet<QuestionMaster>();
-            this.UserServicesUsedHistories = new HashSet<UserServicesUsedHistory>();
             this.UserServiceInfoes = new HashSet<UserServiceInfo>();
+            this.UserServicesUsedHistories = new HashSet<UserServicesUsedHistory>();
         }
     
         public int SubCategoryID { get; set; }
@@ -29,7 +29,7 @@ namespace RightO.Models
         public virtual CategoryMaster CategoryMaster { get; set; }
         public virtual ICollection<ProUserCategoryMapping> ProUserCategoryMappings { get; set; }
         public virtual ICollection<QuestionMaster> QuestionMasters { get; set; }
-        public virtual ICollection<UserServicesUsedHistory> UserServicesUsedHistories { get; set; }
         public virtual ICollection<UserServiceInfo> UserServiceInfoes { get; set; }
+        public virtual ICollection<UserServicesUsedHistory> UserServicesUsedHistories { get; set; }
     }
 }

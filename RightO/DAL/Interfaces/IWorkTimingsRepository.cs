@@ -6,7 +6,7 @@ using RightO.Models;
 
 namespace RightO.DAL
 {
-    interface IWorkTimingsRepository : IDisposable
+    public interface IWorkTimingsRepository : IDisposable
     {
         IEnumerable<WorkTimingsMaster> GetWorkTimings();
 

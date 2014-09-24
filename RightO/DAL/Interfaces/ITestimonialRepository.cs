@@ -6,7 +6,7 @@ using RightO.Models;
 
 namespace RightO.DAL
 {
-    interface ITestimonialRepository : IDisposable
+    public interface ITestimonialRepository : IDisposable
     {
         IEnumerable<TestimonialHistory> GetAllTestimonials();
 
