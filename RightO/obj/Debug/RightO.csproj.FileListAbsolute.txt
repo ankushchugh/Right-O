@@ -51,9 +51,6 @@ c:\users\piyush\documents\visual studio 2010\Projects\RightO\RightO\bin\DotNetOp
 c:\users\piyush\documents\visual studio 2010\Projects\RightO\RightO\obj\Debug\RightO.csprojResolveAssemblyReference.cache
 c:\users\piyush\documents\visual studio 2010\Projects\RightO\RightO\obj\Debug\RightO.dll
 c:\users\piyush\documents\visual studio 2010\Projects\RightO\RightO\obj\Debug\RightO.pdb
-C:\Users\piyush\Documents\GitHub\Right-O\RightO\obj\Debug\RightO.csprojResolveAssemblyReference.cache
-C:\Users\piyush\Documents\GitHub\Right-O\RightO\obj\Debug\RightO.dll
-C:\Users\piyush\Documents\GitHub\Right-O\RightO\obj\Debug\RightO.pdb
 C:\Users\piyush\Documents\GitHub\Right-O\RightO\bin\RightO.dll
 C:\Users\piyush\Documents\GitHub\Right-O\RightO\bin\RightO.pdb
 C:\Users\piyush\Documents\GitHub\Right-O\RightO\bin\Antlr3.Runtime.dll
@@ -106,3 +103,6 @@ C:\Users\piyush\Documents\GitHub\Right-O\RightO\bin\DotNetOpenAuth.OAuth.Consume
 C:\Users\piyush\Documents\GitHub\Right-O\RightO\bin\DotNetOpenAuth.OAuth.xml
 C:\Users\piyush\Documents\GitHub\Right-O\RightO\bin\DotNetOpenAuth.OpenId.xml
 C:\Users\piyush\Documents\GitHub\Right-O\RightO\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\piyush\Documents\GitHub\Right-O\RightO\obj\Debug\RightO.csprojResolveAssemblyReference.cache
+C:\Users\piyush\Documents\GitHub\Right-O\RightO\obj\Debug\RightO.dll
+C:\Users\piyush\Documents\GitHub\Right-O\RightO\obj\Debug\RightO.pdb

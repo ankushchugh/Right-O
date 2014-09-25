@@ -14,7 +14,7 @@ function AfterLoad() {
         ],		
         paginationSpeed : 1000,
         goToFirstSpeed : 2000,
-        autoPlay : 8000,		
+        autoPlay : 2000,		
         singleItem : true,
         transitionStyle:"fade",
         afterAction: afterAction
@@ -29,7 +29,10 @@ function AfterLoad() {
     $("#owl-testimonials").owlCarousel({
         autoHeight : true,
         singleItem : true,
-        navigation:true,
+        navigation: true,
+        transitionStyle: "fade",
+        autoPlay: 4000,
+        stopOnHover: true,
         slideSpeed : 1000
     });
 	
@@ -351,7 +354,7 @@ $(document).ready(function() {
 	pattitabs();
 	toggles();
 	pattiskills();
-	
+	AfterLoad();
 	
 	$("#login").hover(function () {
 	    $(this).removeClass("black");

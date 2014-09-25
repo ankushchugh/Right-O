@@ -266,6 +266,7 @@
     <Content Include="Content\css\audioplayer.css" />
     <Content Include="Content\css\blue.css" />
     <Content Include="Content\css\custom.css" />
+    <Content Include="Content\css\flaticon.css" />
     <Content Include="Content\css\font-awesome.css" />
     <Content Include="Content\css\googlefonts.css" />
     <Content Include="Content\css\green.css" />
@@ -286,6 +287,7 @@
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\superfish.css" />
     <Content Include="Content\css\yellow.css" />
+    <Content Include="Content\fonts\flaticon.svg" />
     <Content Include="Content\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -561,6 +563,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\fonts\flaticon.eot" />
+    <Content Include="Content\fonts\flaticon.ttf" />
+    <Content Include="Content\fonts\flaticon.woff" />
     <None Include="Properties\PublishProfiles\righto.co.in - Web Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
