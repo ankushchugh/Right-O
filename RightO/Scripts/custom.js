@@ -322,8 +322,8 @@ function autofillSearchbox() {
 //	});			
 //}
 
-function LoadSubCategories() {
-    var availableCategories = [];
+function LoadSubCategories(availableCategories) {
+    
     $.ajax({
         type: 'GET',
         url: '/Home/GetSubCategories',
@@ -333,20 +333,47 @@ function LoadSubCategories() {
             });
             $("#searchTextBox").autocomplete({
                 source: availableCategories
+                
             });
             
         }
     });
+    return availableCategories;
 }
 
+function LoadTestimonials(testimonialsFromDB) {
+
+    $.ajax({
+        type: 'GET',
+        url: '/Home/GetTestimonials',
+        success: function (testimonials) {
+            $.each(testimonials, function (i, item) {
+                var testimonial = { info: item.testimonialInfo, name: item.username }
+                testimonialsFromDB.push(testimonial);
+            });
+            var eachItem = $('#owl-testimonials .testimonial-item');
+            eachItem.each(function (i,elm) {
+                var p1 = $(this).find("p:first");
+                p1.text(testimonialsFromDB[i].info);
+
+                var spaninp2 = $(this).find('p').find('span');
+                spaninp2.text(testimonialsFromDB[i].name);
+           });
+        }
+    });
+    return testimonialsFromDB;
+}
 	
 $(document).ready(function() {
+    var availableCategories = [];
+    var testimonials = [];
 
 	//Run Functions
     pattinav();
     //autofillSearchbox();
 
-    LoadSubCategories();
+    availableCategories = LoadSubCategories(availableCategories);
+    testimonials = LoadTestimonials(testimonials);
 
 	//counts();
 	totop();	
@@ -464,7 +491,7 @@ $(document).ready(function() {
 	$(".tweet").tweet({
 		modpath: 'twitter/',
 		join_text: "auto",
-		username: "deliciousthemes",
+		username: "piyush_saggi",
 		count: 3,
 		template: "{time}{text}{reply_action}{retweet_action}{favorite_action}",
 		auto_join_text_reply: null,

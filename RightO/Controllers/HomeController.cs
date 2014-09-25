@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using RightO.DAL;
+using RightO.Mailers;
 using RightO.Models;
 
 namespace RightO.Controllers
@@ -16,7 +17,13 @@ namespace RightO.Controllers
         private IProRepository _proRepository;
         private IWorkLocationsRepository _workLocationsRepository;
         private IWorkTimingsRepository _workTimingsRepository;
-        
+        private ITestimonialRepository _testimonialRepository;
+        private IUserMailer _userMailer = new UserMailer();
+        public IUserMailer UserMailer
+        {
+            get { return _userMailer; }
+            set { _userMailer = value; }
+        }
 
         public HomeController() 
         {
@@ -26,11 +33,12 @@ namespace RightO.Controllers
             this._proRepository = new ProRepository(new RightOEntities());
             this._workLocationsRepository = new WorkLocationsRepository(new RightOEntities());
             this._workTimingsRepository = new WorkTimingsRepository(new RightOEntities());
+            this._testimonialRepository = new TestimonialRepository(new RightOEntities());
 
         }
 
         public HomeController(ICategoryRepository catRepository, ISubCategoryRepository subRespository, ICustomerRepository cusRepository,
-            IProRepository proRepos, IWorkLocationsRepository worklocationRepos, IWorkTimingsRepository workTimingsRepository)
+            IProRepository proRepos, IWorkLocationsRepository worklocationRepos, IWorkTimingsRepository workTimingsRepository, ITestimonialRepository testimonialRepository)
         {
             _categoryRepository = catRepository;
             _subCategoryRepository = subRespository;
@@ -38,6 +46,7 @@ namespace RightO.Controllers
             _proRepository = proRepos;
             _workLocationsRepository = worklocationRepos;
             _workTimingsRepository = workTimingsRepository;
+            _testimonialRepository = testimonialRepository;
         }
 
         public ActionResult Index()
@@ -74,6 +83,24 @@ namespace RightO.Controllers
                 subcategoryId = x.SubCategoryID
             });
             return this.Json(jsonToReturn, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetTestimonials()
+        {
+            var testimonials = _testimonialRepository.GetAllTestimonials().OrderBy(s => Guid.NewGuid()).Take(2);
+            var jsonToReturn = testimonials.Select(x => new
+            {
+                testimonialInfo = x.TestimonialInfo,
+                username = x.CustomerUserMaster.Name.ToUpper()
+            });
+            return this.Json(jsonToReturn, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult SendContactEnquiry(ContactModel contactModel)
+        {
+
+            _userMailer.Welcome("test mail", "piyushraw12@gmail.com", contactModel).Send(); ;
+            return this.Json(new { success = true});
         }
     }
 }
