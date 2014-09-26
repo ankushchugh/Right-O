@@ -323,13 +323,30 @@ function autofillSearchbox() {
 //}
 
 function LoadSubCategories(availableCategories) {
-    
+    var data = [];
     $.ajax({
         type: 'GET',
         url: '/Home/GetSubCategories',
         success: function (subcategory) {
+            data = subcategory;
+            
             $.each(subcategory, function (i, item) {
                 availableCategories.push(item.subCategoryName);
+                if (item.categoryName == "Home Support") {
+                    $('.homeSupport').append("<li class='borderlist'><h3>" + item.subCategoryName + "</h3></li>");
+                }
+                if (item.categoryName == "Education & learning") {
+                    $('.education').append("<li class='borderlist'><h3>" + item.subCategoryName + "</h3></li>");
+                }
+                if (item.categoryName == "Beauty & Wellness") {
+                    $('.beautyWellNess').append("<li class='borderlist'><h3>" + item.subCategoryName + "</h3></li>");
+                }
+                if (item.categoryName == "Personal services") {
+                    $('.personalSupport').append("<li class='borderlist'><h3>" + item.subCategoryName + "</h3></li>");
+                }
+                if (item.categoryName == "Events") {
+                    $('.events').append("<li class='borderlist'><h3>" + item.subCategoryName + "</h3></li>");
+                }
             });
             $("#searchTextBox").autocomplete({
                 source: availableCategories
@@ -338,7 +355,7 @@ function LoadSubCategories(availableCategories) {
             
         }
     });
-    return availableCategories;
+    return data;
 }
 
 function LoadTestimonials(testimonialsFromDB) {
@@ -373,6 +390,8 @@ $(document).ready(function() {
     //autofillSearchbox();
 
     availableCategories = LoadSubCategories(availableCategories);
+    
+
     testimonials = LoadTestimonials(testimonials);
 
 	//counts();
@@ -383,6 +402,127 @@ $(document).ready(function() {
 	pattiskills();
 	AfterLoad();
 	
+	$('#submit').on('click',(function () {
+	    var isValid = true;
+
+	    if ($('#name').val() == "" || $('#email').val() == "" || $('#comments').val() == "") {
+	        isValid = false;
+	    }
+	    if (isValid) {
+	        //var action = $(this).attr('action');
+
+	        //$("#message").slideUp(750, function () {
+	        //    $('#message').hide();
+
+	        $('#submit')
+                .after('<img src="images/nivo-preloader.gif" class="contact-loader" />')
+                .attr('disabled', 'disabled');
+
+	        //    $.post(action, {
+	        //        name: $('#name').val(),
+	        //        email: $('#email').val(),
+	        //        comments: $('#comments').val(),
+	        //        verify: $('#verify').val()
+	        //    },
+	        //        function (data) {
+	        //            document.getElementById('message').innerHTML = data;
+	        //            $('#message').slideDown('slow');
+	        //            $('#cform img.contact-loader').fadeOut('slow', function () { $(this).remove() });
+	        //            $('#submit').removeAttr('disabled');
+	        //            if (data.match('success') != null) $('#cform').slideUp('slow');
+	        //        }
+	        //    );
+
+	        //});
+
+	        //return false;
+	        var conactModel = { "Name": $('#name').val(), "Email": $('#email').val(), "Comments": $('#comments').val() };
+
+	        $.ajax({
+	            url: "/Home/SendContactEnquiry",
+	            type: "POST",
+	            data: conactModel,
+	            success: function (data, textStatus, jqXHR) {
+	                //data - response from server
+	                if (data.success) {
+	                    $('img.contact-loader').fadeOut('slow', function () { $(this).remove() });
+	                    $('#submit').removeAttr('disabled');
+	                    $("#dialogText").text("We will get back to you for this enquiry.");
+	                    $('#message').dialog({
+	                        draggable: true,
+	                        resizable: true,
+	                        position: ['center'],
+	                        width: 200,
+	                        title: 'Sent successfully!!'
+	                    });
+	                }
+	            },
+	            error: function (jqXHR, textStatus, errorThrown) {
+	                $("#dialogText").text("Oops!! something went wrong.");
+	                $('#message').dialog({
+	                    draggable: true,
+	                    resizable: true,
+	                    position: ['center'],
+	                    width: 200,
+	                    title: 'Error'
+	                });
+	            }
+	        });
+	        return false;
+	    }
+	    else {
+	        $('#message').dialog({
+	            draggable: true,
+	            resizable: true,
+	            position: ['center'],
+	            width: 200,
+	            title: 'Error'
+	        });
+	        return false;
+	    }
+
+	}));
+
+	$("#login").click(function () {
+	   
+	});
+	$("#modal_trigger").leanModal({ top: 150, overlay: 0.6, closeButton: ".modal_close" });
+
+	
+	    // Calling Login Form
+	    $("#login_form").click(function () {
+	        $(".social_login").hide();
+	        $(".user_login").show();
+	        return false;
+	    });
+
+	    // Calling Register Form
+	    $("#register_form").click(function () {
+	        $(".social_login").hide();
+	        $(".user_register").show();
+	        $(".header_title").text('Register');
+	        return false;
+	    });
+
+	    // Going back to Social Forms
+	    $(".back_btn").click(function () {
+	        $(".user_login").hide();
+	        $(".user_register").hide();
+	        $(".social_login").show();
+	        $(".header_title").text('Login');
+	        return false;
+	    });
+
+	
+
+	$('.borderlist').hover(function () {
+	    $(this).addClass("hoverred");
+	    $(this).addClass("under-opacity");
+	}, function () {
+	    $(this).removeClass("hoverred");
+	    $(this).removeClass("under-opacity");
+	});
+
 	$("#login").hover(function () {
 	    $(this).removeClass("black");
 	    $(this).addClass("hoverred");
@@ -407,6 +547,8 @@ $(document).ready(function() {
 	    slideSpeed: 1000
 	});
 	
+	
+
 	
 	// Header Effect on Scroll
 	$(window).scroll( function() {
