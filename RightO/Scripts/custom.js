@@ -486,7 +486,7 @@ $(document).ready(function() {
 	$("#login").click(function () {
 	   
 	});
-	$("#modal_trigger").leanModal({ top: 150, overlay: 0.6, closeButton: ".modal_close" });
+	$("#modal_trigger").leanModal({ top: 100, overlay: 0.6, closeButton: ".modal_close" });
 
 	
 	    // Calling Login Form
