@@ -273,6 +273,7 @@
     <Content Include="Content\css\custom.css" />
     <Content Include="Content\css\flaticon.css" />
     <Content Include="Content\css\font-awesome.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
     <Content Include="Content\css\googlefonts.css" />
     <Content Include="Content\css\green.css" />
     <Content Include="Content\css\jquery-ui.css" />
@@ -579,6 +580,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\righto.in - Web Deploy.pubxml" />
+    <Content Include="Views\Category\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -11,8 +11,9 @@ namespace RightO.Controllers
         //
         // GET: /Category/
 
-        public ActionResult Index()
+        public ActionResult Index(string subCategoryName)
         {
+            ViewBag.SubCatName = subCategoryName;
             return View();
         }
 

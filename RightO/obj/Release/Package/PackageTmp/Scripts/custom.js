@@ -292,35 +292,6 @@ function pattiservices() {
 	});
 }
 
-//Auto complete search box
-function autofillSearchbox() {
-    var availableCategories = [
-                 "Photography",
-                 "Bike Services",
-                 "Electrician",
-                 "Plumber",
-    ];
-    $("#searchTextBox").autocomplete({
-        source: availableCategories
-       });
-
-}
-
-//// Blog Gallery Slider
-//function gallery_slider() {
-//	$(".gallery-slider").owlCarousel({
-//		stopOnHover : true,
-//		navigation:true,
-//		navigationText: [
-//			  "<i class='fa fa-angle-left'></i>",
-//			  "<i class='fa fa-angle-right'></i>"
-//			  ],		
-//		paginationSpeed : 1000,
-//		goToFirstSpeed : 2000,
-//		singleItem : true,
-//		transitionStyle:"fade"
-//	});			
-//}
 
 function LoadSubCategories(availableCategories) {
     var data = [];
@@ -333,19 +304,19 @@ function LoadSubCategories(availableCategories) {
             $.each(subcategory, function (i, item) {
                 availableCategories.push(item.subCategoryName);
                 if (item.categoryName == "Home Support") {
-                    $('.homeSupport').append("<li class='borderlist'><h3>" + item.subCategoryName + "</h3></li>");
+                    $('.homeSupport').append("<li class='borderlist'><a href='/Category/Index?subCategoryName=" + item.subCategoryName + "'>" + item.subCategoryName + "</a></li>");
                 }
                 if (item.categoryName == "Education & learning") {
-                    $('.education').append("<li class='borderlist'><h3>" + item.subCategoryName + "</h3></li>");
+                    $('.education').append("<li class='borderlist'><a href='/Category/Index?subCategoryName=" + item.subCategoryName + "'>" + item.subCategoryName + "</a></li>");
                 }
                 if (item.categoryName == "Beauty & Wellness") {
-                    $('.beautyWellNess').append("<li class='borderlist'><h3>" + item.subCategoryName + "</h3></li>");
+                    $('.beautyWellNess').append("<li class='borderlist'><a href='/Category/Index?subCategoryName=" + item.subCategoryName + "'>" + item.subCategoryName + "</a></li>");
                 }
                 if (item.categoryName == "Personal services") {
-                    $('.personalSupport').append("<li class='borderlist'><h3>" + item.subCategoryName + "</h3></li>");
+                    $('.personalSupport').append("<li class='borderlist'><a href='/Category/Index?subCategoryName=" + item.subCategoryName + "'>" + item.subCategoryName + "</a></li>");
                 }
                 if (item.categoryName == "Events") {
-                    $('.events').append("<li class='borderlist'><h3>" + item.subCategoryName + "</h3></li>");
+                    $('.events').append("<li class='borderlist'><a href='/Category/Index?subCategoryName=" + item.subCategoryName + "'>" + item.subCategoryName + "</a></li>");
                 }
             });
             $("#searchTextBox").autocomplete({
@@ -387,7 +358,6 @@ $(document).ready(function() {
 
 	//Run Functions
     pattinav();
-    //autofillSearchbox();
 
     availableCategories = LoadSubCategories(availableCategories);
     
@@ -409,33 +379,9 @@ $(document).ready(function() {
 	        isValid = false;
 	    }
 	    if (isValid) {
-	        //var action = $(this).attr('action');
-
-	        //$("#message").slideUp(750, function () {
-	        //    $('#message').hide();
-
 	        $('#submit')
                 .after('<img src="images/nivo-preloader.gif" class="contact-loader" />')
                 .attr('disabled', 'disabled');
-
-	        //    $.post(action, {
-	        //        name: $('#name').val(),
-	        //        email: $('#email').val(),
-	        //        comments: $('#comments').val(),
-	        //        verify: $('#verify').val()
-	        //    },
-	        //        function (data) {
-	        //            document.getElementById('message').innerHTML = data;
-	        //            $('#message').slideDown('slow');
-	        //            $('#cform img.contact-loader').fadeOut('slow', function () { $(this).remove() });
-	        //            $('#submit').removeAttr('disabled');
-	        //            if (data.match('success') != null) $('#cform').slideUp('slow');
-	        //        }
-	        //    );
-
-	        //});
-
-	        //return false;
 	        var conactModel = { "Name": $('#name').val(), "Email": $('#email').val(), "Comments": $('#comments').val() };
 
 	        $.ajax({
@@ -483,8 +429,11 @@ $(document).ready(function() {
 
 	}));
 
-	$("#login").click(function () {
-	   
+	$("#searchButton").click(function () {
+	    if ($('#searchTextBox').val() != "") {
+	        window.location.href = "/Category/Index?subCategoryName=" + $('#searchTextBox').val();
+	    }
+	    return false;
 	});
 	$("#modal_trigger").leanModal({ top: 100, overlay: 0.6, closeButton: ".modal_close" });
 
@@ -523,22 +472,9 @@ $(document).ready(function() {
 	    $(this).removeClass("under-opacity");
 	});
 
-	$("#login").hover(function () {
-	    $(this).removeClass("black");
-	    $(this).addClass("hoverred");
-	}, function () {
-	    $(this).removeClass("hoverred");
-	    $(this).addClass("black");
-	});
-
-	$("#signup").hover(function () {
-	    $(this).removeClass("black");
-	    $(this).addClass("hoverred");
-	}, function () {
-	    $(this).removeClass("hoverred");
-	    $(this).addClass("black");
-	});
 	
+
+		
     // Testimonials Slider
 	$("#owl-testimonials").owlCarousel({
 	    autoHeight: true,
@@ -625,8 +561,7 @@ $(document).ready(function() {
 	});	
 	
 	
-	// Video in Posts		
-	$(".post-video").fitVids();		
+			
 	
 	
 	// Twitter Feed
@@ -646,18 +581,7 @@ $(document).ready(function() {
 	});	
 
 	
-	// Flickr Widget
-	$('#flickr').jflickrfeed({
-		limit: 10,
-		qstrings: {
-			id: '58842866@N08',
-			tags: 'architecture'
-		},
-		itemTemplate: 
-		'<li>' +
-			'<a href="{{image_b}}"><img src="{{image_s}}" alt="{{title}}" /></a>' +
-		'</li>' 
-	});	
+	
 
 	
 	// PrettyPhoto
@@ -671,18 +595,7 @@ $(document).ready(function() {
 	$('.box-info').prepend('<i class="fa fa-info-circle"></i>');
 
 	
-	// Audio Player
-	$("#audio_jplayer").jPlayer({
-		ready: function (event) {
-			$(this).jPlayer("setMedia", {
-				mp3:"media/audio.mp3",
-				ogg:"media/audio.ogg"
-			});
-		},
-		swfPath: "/media",
-		supplied: "mp3, ogg",
-		wmode: "window"
-	});
+	
 
 
 
