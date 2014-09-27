@@ -712,9 +712,9 @@ a:focus , a:link, a:active {
 	outline:none;
 }
 
-a:hover {
+/*a:hover {
 	color:#444;
-}
+}*/
 
 p {
 	margin-bottom:20px;
@@ -872,8 +872,8 @@ textarea {
 
 .login {
     position:absolute;
-    top:15%;
-    right:20px;
+    top:10px;
+    right:50px;
 }
 
 #logoplaceholder {
