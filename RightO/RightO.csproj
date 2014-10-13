@@ -206,6 +206,7 @@
     <Compile Include="Mailers\IUserMailer.cs" />
     <Compile Include="Mailers\UserMailer.cs" />
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\CategoryMaster.cs">
       <DependentUpon>RightOModel.tt</DependentUpon>
     </Compile>
@@ -581,6 +582,8 @@
   <ItemGroup>
     <None Include="Properties\PublishProfiles\righto.in - Web Deploy.pubxml" />
     <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\_carpainterRepair.cshtml" />
+    <Content Include="Views\Category\_keymaker.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

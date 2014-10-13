@@ -14,6 +14,8 @@ namespace RightO.Controllers
         public ActionResult Index(string subCategoryName)
         {
             ViewBag.SubCatName = subCategoryName;
+
+            //create base model object here and pass it to view and render partial view accordingly
             return View();
         }
 

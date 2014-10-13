@@ -1,0 +1,85 @@
+﻿@model RightO.Models.BaseModel
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<form>
+   
+        <fieldset class="percent-one-half">
+            <legend>Where do you want this service? </legend>
+         <input id="pincode" type="text" name="pincode"  />
+        </fieldset>
+
+        <fieldset class="percent-one-half">
+            <legend>Where do you want this service? </legend>
+         <input id="timings" type="date" name="timings" />
+        </fieldset>
+
+         <fieldset class="percent-one-half">
+            <legend>What is the suitable timing for you? </legend>
+         <select>
+             <option value="9AM-12PM">9AM-12PM</option>
+             <option value="12PM-3PM">12PM-3PM</option>
+             <option value="3PM-6PM">3PM-6PM</option>
+             <option value="6PM-9PM">6PM-9PM</option>
+         </select>
+        </fieldset>
+       <fieldset class="percent-one-half">
+            <legend>What's your contact number? </legend>
+         <input id="phone" type="text" name="phone" />
+        </fieldset>
+
+       <fieldset class="percent-one-half">
+            <legend>What's your address? </legend>
+        <textarea name="address" id="address"></textarea>
+        </fieldset>
+
+        <fieldset class="percent-one-half">
+            <legend>What's your email id? </legend>
+         <input id="email" type="email" name="email" />
+        </fieldset>
+
+
+     <fieldset class="percent-one-half">
+                <legend>Please specify the scope of work</legend>
+                        <input type="radio" name="key" value="I have a key and want to make duplicates" />I have a key and want to make duplicates <br />
+                        <input type="radio" name="key" value="I don’t have a key" />I don’t have a key<br /><br/>
+        </fieldset>
+
+    <fieldset class="percent-one-half">
+            <legend>Please specify the type of lock </legend>
+         <select>
+             <option value="Motorbike lock">Motorbike lock</option>
+             <option value="Car lock">Car lock</option>
+             <option value="Padlock - free standing and portable">Padlock - free standing and portable</option>
+             <option value="Knob locks">Knob locks</option>
+             <option value="Lever handle lock">Lever handle lock</option>
+             <option value="Furniture lock">Furniture lock</option>
+             <option value="Any other">Any other</option>
+         </select>
+        </fieldset>
+    <fieldset class="percent-one-half">
+            <legend>Where would you like the key to be made?</legend>
+         <select multiple>
+             <option value="The keymaker travels to my premises">The keymaker travels to my premises</option>
+             <option value="I'll travel to the keymaker">I'll travel to the keymaker</option>
+         </select>
+        </fieldset>
+
+  
+
+    <fieldset class="percent-one-half">
+                <legend>Please share any other information you feel is relevant</legend>
+                        <textarea name="other" id="other" placeholder=""></textarea>
+        </fieldset>
+
+        <fieldset class="percent-one-half">
+            <legend></legend>
+            <br />
+           <a href="#" class="button black"><i class="fa fa-envelope-o"></i>Send</a>
+       </fieldset>
+    
+</form>
+
+

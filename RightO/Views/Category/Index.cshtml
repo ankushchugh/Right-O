@@ -7,17 +7,18 @@
 
 	<section class="centered-wrapper">
 	
-	<div class="page-title-subtitle">
-		<h1 class="portfolio-title float-left">You picked @ViewBag.SubCatName</h1>
-		@*<h2 class="section-tagline float-left">Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</h2>*@
+	<div class="formPageLabel">
+		<h5 class="portfolio-title float-left">Give us some informmation</h5>
 	</div>
+        @if (ViewBag.SubCatName == "Carpenters")
+        {
+	        @Html.Partial("~/views/category/_carpainterRepair.cshtml")
+        }
 
-		
-	
-			
-		
-	
-		<div class="clear"></div>
+         @if (ViewBag.SubCatName == "Keymakers")
+        {
+	        @Html.Partial("~/views/category/_keymaker.cshtml")
+        }
 	</section>
 	
 	

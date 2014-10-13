@@ -1,0 +1,112 @@
+﻿@model RightO.Models.BaseModel
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<form>
+   
+        <fieldset class="percent-one-half">
+            <legend>Where do you want this service? </legend>
+         <input id="pincode" type="text" name="pincode"  />
+        </fieldset>
+
+        <fieldset class="percent-one-half">
+            <legend>Where do you want this service? </legend>
+         <input id="timings" type="date" name="timings" />
+        </fieldset>
+
+         <fieldset class="percent-one-half">
+            <legend>What is the suitable timing for you? </legend>
+         <select>
+             <option value="9AM-12PM">9AM-12PM</option>
+             <option value="12PM-3PM">12PM-3PM</option>
+             <option value="3PM-6PM">3PM-6PM</option>
+             <option value="6PM-9PM">6PM-9PM</option>
+         </select>
+        </fieldset>
+       <fieldset class="percent-one-half">
+            <legend>What's your contact number? </legend>
+         <input id="phone" type="text" name="phone" />
+        </fieldset>
+
+       <fieldset class="percent-one-half">
+            <legend>What's your address? </legend>
+        <textarea name="address" id="address"></textarea>
+        </fieldset>
+
+        <fieldset class="percent-one-half">
+            <legend>What's your email id? </legend>
+         <input id="email" type="email" name="email" />
+        </fieldset>
+
+        <fieldset class="percent-one-half">
+            <legend>Please select the furniture item </legend>
+         <select>
+             <option value="Chair">Chair</option>
+             <option value="Dining table">Dining table</option>
+             <option value="Computer table">Computer table</option>
+             <option value="Other table">Other table</option>
+             <option value="Bed">Bed</option>
+             <option value="Sofa">Sofa</option>
+             <option value="Cupboard">Cupboard</option>
+             <option value="Doors">Doors</option>
+             <option value="Windows">Windows</option>
+             <option value="Modular kitchen">Modular kitchen</option>
+         </select>
+        </fieldset>
+     <fieldset class="percent-one-half">
+                <legend>Please select the type of furniture</legend>
+                        <input type="radio" name="furniture" value="Metal" />Metal
+                        <input type="radio" name="furniture" value="Wooden" />Wooden<br /><br/>
+        </fieldset>
+
+    <fieldset class="percent-one-half">
+            <legend>Please specify the number of furniture items that need repair </legend>
+         <select>
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3</option>
+             <option value="4">4</option>
+             <option value="5">5</option>
+             <option value="6">6</option>
+             <option value="7">7</option>
+             <option value="8">8</option>
+         </select>
+        </fieldset>
+    <fieldset class="percent-one-half">
+            <legend>Please specify the type of fault</legend>
+         <select multiple>
+             <option value="Broken leg">Broken leg</option>
+             <option value="Broken glass">Broken glass</option>
+             <option value="Cushioning replacement">Cushioning replacement</option>
+             <option value="Hinge replacement/repair">Hinge replacement/repair</option>
+             <option value="Any other repair - please specify">Any other repair - please specify</option>
+         </select>
+        </fieldset>
+
+    <fieldset class="percent-one-half">
+                <legend>Please specify the location</legend>
+                        <input type="radio" name="location" value="Stand alone home" />Stand alone home
+                        <br /><input type="radio" name="location" value="Residential apartment in a building" />Residential apartment in a building
+                        <br /><input type="radio" name="location" value="Commercial" />Commercial<br /><br />
+        </fieldset>
+    <fieldset class="percent-one-half">
+                <legend>Would you allow the carpenter to use your premises for repair work?</legend>
+                        <input type="radio" name="permi" value="Yes" />Yes
+                       <input type="radio" name="permi" value="No" />No<br /><br />
+        </fieldset>
+
+    <fieldset class="percent-one-half">
+                <legend>Please share any other information you feel is relevant</legend>
+                        <textarea name="other" id="other" placeholder=""></textarea>
+        </fieldset>
+
+        <fieldset class="percent-one-half">
+            <br />
+           <a href="#" class="button black"><i class="fa fa-envelope-o"></i>Send</a>
+       </fieldset>
+    
+</form>
+
+
